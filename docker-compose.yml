@@ -1,0 +1,14 @@
+version: '4'
+
+services:
+  mongodb:
+    image: mongo:7.0.5
+    container_name: mongodb-banking
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: banking
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"

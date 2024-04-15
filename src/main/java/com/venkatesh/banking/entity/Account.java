@@ -1,10 +1,10 @@
 package com.venkatesh.banking.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Table(name="accounts")
-@Entity
+@Document(value = "account")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -12,9 +12,7 @@ import lombok.*;
 @Setter
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="account_holder_name")
     private String accountHolder;
     private double balance;
 }
